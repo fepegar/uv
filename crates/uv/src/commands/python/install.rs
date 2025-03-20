@@ -234,6 +234,7 @@ pub(crate) async fn install(
                         }
                     }
                 } else {
+                    // FIXME !@: Address this if possible
                     // TODO(zanieb): This isn't really right! But we need `--upgrade` or similar
                     // to handle this case correctly without causing a breaking change.
 
@@ -248,7 +249,6 @@ pub(crate) async fn install(
                 }
             }
         }
-
         (vec![], unsatisfied)
     } else {
         // If we can find one existing installation that matches the request, it is satisfied
@@ -360,6 +360,7 @@ pub(crate) async fn install(
         installation.ensure_externally_managed()?;
         installation.ensure_sysconfig_patched()?;
         installation.ensure_canonical_executables()?;
+        installation.ensure_minor_version_link()?;
         if let Err(e) = installation.ensure_dylib_patched() {
             e.warn_user(installation);
         }
