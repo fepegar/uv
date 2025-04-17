@@ -4880,6 +4880,7 @@ dependencies = [
  "uv-torch",
  "uv-version",
  "uv-warnings",
+ "uv-workspace",
 ]
 
 [[package]]
@@ -5741,6 +5742,7 @@ dependencies = [
  "uv-static",
  "uv-torch",
  "uv-warnings",
+ "uv-workspace",
 ]
 
 [[package]]
@@ -5902,6 +5904,7 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "assert_fs",
+ "clap",
  "fs-err 3.1.0",
  "glob",
  "insta",
