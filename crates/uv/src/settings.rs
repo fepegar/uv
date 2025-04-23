@@ -1333,7 +1333,7 @@ impl AddSettings {
             .unwrap_or_default();
 
         let bounds = bounds
-            .or(filesystem.as_ref().and_then(|fs| fs.edit.bounds))
+            .or(filesystem.as_ref().and_then(|fs| fs.add.bounds))
             .unwrap_or_default();
 
         Self {
