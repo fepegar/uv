@@ -896,7 +896,7 @@ fn help_unknown_subcommand() {
 fn help_unknown_subsubcommand() {
     let context = TestContext::new_with_versions(&[]);
 
-    uv_snapshot!(context.filters(), context.help().arg("python").arg("foobar"), @r###"
+    uv_snapshot!(context.filters(), context.help().arg("python").arg("foobar"), @r"
     success: false
     exit_code: 2
     ----- stdout -----
@@ -905,11 +905,12 @@ fn help_unknown_subsubcommand() {
     error: There is no command `foobar` for `uv python`. Did you mean one of:
         list
         install
+        upgrade
         find
         pin
         dir
         uninstall
-    "###);
+    ");
 }
 
 #[test]
