@@ -166,7 +166,7 @@ pub(crate) fn create(
         .to_path_buf();
     let python_home = python_home.as_path();
 
-    dbg!("parent_home: {:?}", &parent_home);
+    dbg!("python_home: {:?}", &python_home);
 
     // Different names for the python interpreter
     fs::create_dir_all(&scripts)?;
