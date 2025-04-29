@@ -176,7 +176,7 @@ impl Interpreter {
             }
             #[cfg(windows)]
             {
-                if parent.components().next_back().is_some() {0
+                if parent.components().next_back().is_some() {
                     dbg!("win1");
                     if let Some(path) = parent.parent() {
                         dbg!("win2");
