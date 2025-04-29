@@ -153,6 +153,8 @@ pub(crate) fn create(
     } else {
         base_python.clone()
     };
+    dbg!("executable_target: {:?}", &executable_target);
+
     let python_home = executable_target
         .parent()
         .ok_or_else(|| {
@@ -163,6 +165,8 @@ pub(crate) fn create(
         })?
         .to_path_buf();
     let python_home = python_home.as_path();
+
+    dbg!("parent_home: {:?}", &parent_home);
 
     // Different names for the python interpreter
     fs::create_dir_all(&scripts)?;
