@@ -673,8 +673,6 @@ pub fn create_bin_link(target: &Path, executable: PathBuf) -> Result<(), Error> 
         err,
     })?;
 
-    dbg!("create bin link target: {:?}", target);
-
     if cfg!(unix) {
         // Note this will never copy on Unix — we use it here to allow compilation on Windows
         match symlink_or_copy_file(&executable, target) {
