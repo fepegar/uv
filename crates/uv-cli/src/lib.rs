@@ -4595,6 +4595,8 @@ pub enum PythonCommand {
     /// See `uv help python` to view supported request formats.
     Install(PythonInstallArgs),
 
+    /// Upgrade Python to the latest patch version.
+    ///
     /// FIXME: Document
     Upgrade(PythonUpgradeArgs),
 
