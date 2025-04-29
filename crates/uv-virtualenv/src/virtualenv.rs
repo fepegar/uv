@@ -149,8 +149,10 @@ pub(crate) fn create(
     // FIXME: Doc
     // FIXME !@
     let executable_target = if interpreter.is_standalone() {
+        dbg!("is_standalone: getting symlink path!");
         interpreter.symlink_path_from_base_python(base_python.clone())?
     } else {
+        dbg!("NOT is_standalone!!!");
         base_python.clone()
     };
     dbg!("executable_target: {:?}", &executable_target);
